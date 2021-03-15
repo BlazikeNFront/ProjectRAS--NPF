@@ -1,0 +1,38 @@
+$mainFont: "Orbitron", sans-serif;
+
+$primary-color: #169e53;
+$font-bg: 2rem;
+$font-md: 1.5rem;
+$font-sm: 1rem;
+
+@mixin containerPosition {
+  width: 95%;
+  max-width: 140rem;
+  margin-left: 50%;
+  transform: translate(-50%);
+}
+
+@mixin mainFontBold {
+  $mainFont: "Orbitron", sans-serif;
+  font-weight: 700;
+}
+
+@mixin centerWithTranslate {
+  margin-left: 50%;
+  transform: translate(-50%);
+}
+@mixin mainBorder {
+  border: 2px solid white;
+}
+@mixin centerAbsolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin flexLayout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
