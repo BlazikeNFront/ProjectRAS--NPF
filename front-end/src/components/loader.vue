@@ -35,10 +35,10 @@ p {
   content: " ";
   display: block;
   position: absolute;
-  width: 0.4rem;
-  height: 0.4rem;
+  width: 0.7rem;
+  height: 0.7rem;
   border-radius: 50%;
-  background: #3d008d;
+  background: #a8440a;
   margin: -4px 0 0 -4px;
 }
 .lds-roller div:nth-child(1) {

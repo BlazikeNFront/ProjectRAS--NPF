@@ -19,18 +19,20 @@ export default {
 <style lang="scss">
 .information-container__box {
   position: relative;
-  display: flex;
-  justify-content: center;
   margin: 1.5rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 50rem;
   border: 3px solid white;
   border-radius: 10px;
-  padding: 3rem;
-  width: 90%;
-  max-width: 50rem;
+  display: flex;
+  justify-content: center;
 }
 
 .information-container__p {
   margin-left: 1rem;
+  display: flex;
+  align-items: center;
   font-size: 2rem;
 }
 .information-container__loader {

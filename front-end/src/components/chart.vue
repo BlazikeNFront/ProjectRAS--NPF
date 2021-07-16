@@ -36,12 +36,11 @@
         :options="chart.options"
         :series="chart.series"
       ></apex>
-
-      <transition name="tempChartLoader">
+      <div v-if="!chart.chartIsVisible">
         <div class="tempChart__loader" v-if="loader">
           <loader></loader>
         </div>
-      </transition>
+      </div>
     </div>
   </article>
 </template>
@@ -65,7 +64,6 @@ export default {
 
       listOptions: {
         showListOption: false,
-
         selected: "LAST 24H",
         day: "LAST 24H",
         week: "LAST WEEK",
@@ -191,44 +189,34 @@ export default {
 
 <style lang='scss'>
 .tempChartBox_container {
-  width: 90%;
-  max-width: 50rem;
-  min-width: 30rem;
   @include flexLayout;
+  width: clamp(30rem, 100%, 50rem);
   flex-direction: column;
 }
 .tempChartBox_chart {
   position: relative;
-
+  border-radius: 20px;
   width: 500px;
-
-  @media (max-width: 500px) {
-    transform: scale(0.9);
-  }
-  @media (max-width: 450px) {
-    transform: scale(0.8);
-  }
+  background-color: #2c3e50;
+  transform: scale(0.6);
 }
 .tempChartBox__console {
   @include flexLayout;
   position: relative;
-  z-index: 100;
+  margin: 1rem;
   width: 100%;
   height: 6rem;
+  z-index: 100;
 }
 .tempChartBox__button {
+  @include mainFontBold;
   margin-top: 1rem;
+
   width: 25rem;
   background: white;
   border: none;
   border-radius: 50px;
-  @include mainFontBold;
   font-family: inherit;
-  padding: 1rem;
-  @media (max-width: 550px) {
-    padding: 0.5rem;
-    font-size: $font-sm;
-  }
 }
 .tempChartBox__categoryButton {
   margin-top: 1rem;
@@ -239,26 +227,33 @@ export default {
   @include mainFontBold;
   font-family: inherit;
   padding: 1rem;
-  &:focus {
-    outline: none;
-  }
 }
 .tempChartBox__list {
-  position: relative;
-  top: -0.4rem;
+  position: absolute;
+  top: 4.5rem;
+  margin: 0 auto;
+
+  width: 13rem;
+  border: 1px solid #2c3e50;
   list-style: none;
   background-color: white;
-  width: 13rem;
-  margin: 0 auto;
-  padding: 0.5rem 0;
-  border-radius: 0 0 5px 5px;
 }
 .tempChartBox__listOption {
-  padding: 0.5rem;
+  padding: 0.7rem 0.5rem;
+  border-top: 1px solid #2c3e50;
+}
+.tempChartBox__listOption:nth-child(1) {
+  border: none;
 }
 .tempChart__loader {
-  transform: scale(0.7) translate(0, 4rem);
-  height: 15rem;
+  @include flexLayout;
+  justify-content: center;
+  height: 22rem;
+  .lds-roller {
+    position: relative;
+    top: -2.5rem;
+    left: 0rem;
+  }
 }
 .tempChartLoader-enter-active,
 .tempChartLoader-leave-active {
@@ -274,5 +269,32 @@ export default {
 .tempChartLoader-leave-from {
   opacity: 1;
   transform: scale(0.7) translate(0, 4rem);
+}
+
+@media (min-width: 340px) {
+  .tempChartBox_chart {
+    transform: scale(0.6);
+  }
+}
+@media (min-width: 375px) {
+  .tempChartBox_chart {
+    transform: scale(0.7);
+  }
+  .tempChartBox__button {
+    padding: 0.5rem 0.7rem;
+  }
+}
+@media (min-width: 450px) {
+  .tempChartBox_chart {
+    transform: scale(0.85);
+  }
+}
+@media (min-width: 500px) {
+  .tempChartBox_chart {
+    transform: scale(0.9);
+  }
+  .tempChartBox__button {
+    padding: 1rem 2rem;
+  }
 }
 </style>

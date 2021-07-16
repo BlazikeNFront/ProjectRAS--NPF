@@ -1,11 +1,12 @@
 <template>
-  <div class="information-container__box">
+  <div class="information-container__box__devices">
     <h4>{{ data.textContent }}</h4>
-    <div class="&quot;information-container__InfoDisplay" v-if="data.dataInfo">
+    <div class="information-container__InfoDisplay" v-if="data.dataInfo">
       <p class="information-container__p">
         {{ data.dataInfo }}
       </p>
       <checkbox
+        class="information__container__devices__checkbox"
         @change="toggleSocket(data)"
         :check="data.state"
         :token="token"
@@ -57,7 +58,38 @@ export default {
 <style lang="scss">
 .information-container__smallLoader {
   position: relative;
-  top: -4rem;
-  transform: scale(0.7);
+  top: -1rem;
+  left: -5rem;
+  transform: scale(0.4);
+}
+.information-container__box__devices {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem;
+  border: 3px solid white;
+  border-radius: 10px;
+  padding: 3rem;
+  width: 90%;
+  max-width: 50rem;
+}
+.information-container__InfoDisplay {
+  @include flexLayout;
+  position: relative;
+}
+.information__container__devices__checkbox {
+  transform: scale(0.8);
+}
+@media (min-width: 425px) {
+  .information-container__smallLoader {
+    top: -1rem;
+    left: -6rem;
+    transform: scale(0.5);
+  }
+  .information-container__box__devices {
+    width: 100%;
+    padding: 2rem;
+  }
 }
 </style>

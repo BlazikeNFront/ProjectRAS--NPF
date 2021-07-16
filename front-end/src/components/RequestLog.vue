@@ -5,7 +5,7 @@
         {{ toggleButtonText }}
       </button>
       <button
-        class="requestsLog__button"
+        class="requestsLog__button requestsLog__button--refresh"
         v-if="showList"
         @click="fetchRequestLogData"
       >
@@ -56,30 +56,45 @@ export default {
 </script>
 <style lang="scss">
 .requestsLog {
-  padding: 3rem;
-  width: 90%;
+  padding: 2rem 1rem;
+  width: 100%;
   max-width: 70rem;
+  min-width: 32rem;
 }
 .requestsLog__buttonsBox {
   @include flexLayout;
   justify-content: space-evenly;
 }
 .requestsLog__button {
-  margin-top: 1rem;
-  width: 17rem;
+  margin: 0 auto;
+  padding: 0.5rem;
+  width: 11rem;
   background: white;
   border: none;
   border-radius: 5px 5px;
+  font-size: 1.2rem;
   font-weight: 700;
   font-family: inherit;
-  padding: 1rem;
 }
+
 .requestList {
   @include flexLayout;
-  flex-direction: column;
   margin: 1.5rem;
-  background-color: white;
+  padding: 1rem 0.5rem;
   border-radius: 10px;
-  padding: 2rem;
+  background-color: white;
+  flex-direction: column;
+}
+@media (min-width: 515px) {
+  .requestsLog__button {
+    margin: 0 auto;
+    padding: 1rem;
+    width: 17rem;
+    background: white;
+    border: none;
+    border-radius: 5px 5px;
+    font-weight: 700;
+    font-family: inherit;
+  }
 }
 </style>

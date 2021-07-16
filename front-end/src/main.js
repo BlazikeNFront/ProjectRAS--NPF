@@ -5,7 +5,7 @@ import store from '../store/index.js';
 
 //global components
 import Loader from './components/loader.vue';
-import Checkbox from "./components/toggleCheckbox.vue";
+import Checkbox from "./components/Checkbox.vue";
 
 
 const app = createApp(App);

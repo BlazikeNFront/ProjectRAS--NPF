@@ -89,10 +89,10 @@ export default {
 <style lang="scss">
 .singleRequestBox {
   @include flexLayout;
-  padding: 1rem;
   margin: 0.5rem;
-  border: 2px solid grey;
+  padding: 1rem;
   width: 100%;
+  border: 2px solid grey;
 }
 .singleRequest {
   font-size: $font-md;
@@ -108,39 +108,37 @@ export default {
   font-family: $mainFont;
 }
 .singleRequest__backdrop {
-  z-index: 200;
   width: 100%;
   height: 100%;
   background-color: black;
   opacity: 0.5;
+  z-index: 200;
 }
 .singleRequest__button {
-  margin-top: 1rem;
+  @include mainFontBold;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
   width: 10rem;
   background: white;
   border: 2px solid #2c3e50;
   font-size: $font-md;
   border-radius: 50px;
   cursor: pointer;
-  @include mainFontBold;
   font-family: inherit;
   color: #2c3e50;
-  padding: 0.5rem 1rem;
-  @media (max-width: 550px) {
-    padding: 0.25rem 0.5;
-    font-size: $font-sm;
-  }
 }
 .singleRequest__details {
   position: fixed;
   top: 50%;
   left: 50%;
+  width: 30rem;
+
   transform: translate(-50%, -50%);
-  z-index: 250;
-  width: 40rem;
+
   border: 2px solid #2c3e50;
   border-radius: 10px;
   background-color: white;
+  z-index: 250;
 }
 .singleRequest__closeButton {
   position: relative;
@@ -148,16 +146,13 @@ export default {
   left: 81%;
   background: white;
   border: 2px solid #2c3e50;
-  font-size: 1.5rem;
+  font-size: $font-sm;
   border-radius: 50px;
   font-family: inherit;
   color: #2c3e50;
   padding: 0.25rem 1rem;
   z-index: 260;
   cursor: pointer;
-  @media (max-width: 550px) {
-    font-size: $font-sm;
-  }
 }
 
 .singleRequest__listElement {
@@ -181,5 +176,15 @@ export default {
 }
 .singleRequest__changes--off {
   background-color: rgba(245, 77, 77, 0.5);
+}
+@media (min-width: 425px) {
+  .singleRequest__details {
+    width: 40rem;
+  }
+}
+@media (min-width: 500px) {
+  .singleRequest__closeButton {
+    font-size: 1.5rem;
+  }
 }
 </style>

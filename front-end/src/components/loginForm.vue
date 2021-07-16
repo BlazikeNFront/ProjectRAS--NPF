@@ -124,23 +124,22 @@ export default {
   position: absolute;
   width: 100%;
   max-width: 120rem;
-  z-index: 200;
   font-family: $mainFont;
+  z-index: 200;
 }
 
 .loginForm {
+  @include flexLayout;
+  @include mainBorder;
   position: fixed;
   top: 0;
   right: 1rem;
-  @include flexLayout;
-  @include mainBorder;
-
-  background-color: $primary-color;
   margin: 1rem auto;
   padding: 2rem;
-  flex-direction: column;
   width: 20rem;
   border-radius: 10px;
+  background-color: $primary-color;
+  flex-direction: column;
   z-index: 200;
   animation-name: fadeIn;
   animation-duration: 1s;
@@ -158,9 +157,9 @@ export default {
 .loginForm__input {
   @include mainFontBold;
   margin: 1rem;
-  font-family: inherit;
-  width: 14rem;
   padding: 0.5rem;
+  width: 14rem;
+  font-family: inherit;
   text-align: center;
 }
 .loginForm__redBorder {
@@ -178,12 +177,12 @@ export default {
 .loginForm__submitButton {
   @include mainBorder;
   margin: 1rem;
-  font-family: inherit;
-  font-size: $font-bg;
   padding: 0.5rem 1rem;
   border-radius: 20px;
   box-shadow: 2px 2px 8px black;
   background: white;
+  font-family: inherit;
+  font-size: $font-bg;
 }
 .loginForm_errorAuthMsg {
   @include mainFontBold;

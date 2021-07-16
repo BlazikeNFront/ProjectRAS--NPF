@@ -46,13 +46,19 @@ export default {
 .loginFormSwitch {
   margin-left: 20%;
   position: absolute;
-  top: 2rem;
-  background: transparent;
-  @include mainBorder;
-  padding: 1rem 3rem;
+  top: 3rem;
+  border: none;
+  border-radius: 25px;
+  @include mainFontBold;
   color: white;
+  padding: 1rem 3rem;
+  background-color: #2c3e50;
   font-family: $mainFont;
   z-index: 100;
+  @media (max-width: 425px) {
+    top: 4rem;
+    padding: 1rem 2rem;
+  }
 }
 .fade-enter-active,
 .fade-leave-active {

@@ -6,7 +6,6 @@
     <main>
       <section class="information-container">
         <chart></chart>
-
         <protocol-info
           :currentProtocol="getRasInfo.currentProtocol"
         ></protocol-info>
@@ -83,6 +82,7 @@ export default {
 *:after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 #demo {
   position: relative;
@@ -118,25 +118,8 @@ html {
 }
 button {
   cursor: pointer;
+  color: #2c3e50;
 }
-/* 
-header {
-  height: 20rem;
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-.header-logo {
-  transform: translateY(-5rem);
-  position: absolute;
-  height: 25%;
-  width: 25rem;
-  padding-top: 1rem;
-  object-fit: none;
-  background-color: white;
-  box-shadow: black 4px 3px 8px;
-  border-radius: 20px;
-} */
 
 h1 {
   font-family: $mainFont;
@@ -145,54 +128,18 @@ h1 {
   width: 100%;
   margin-top: 15rem;
 }
-/* .backDrop {
-  position: fixed;
-  z-index: 150;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  opacity: 0.5;
-} */
+
 main {
-  padding: 3rem;
+  padding: 3rem 1rem;
   font-family: $mainFont;
 }
 
-.information-container__tempChart {
-  width: 100%;
-
-  max-width: 55rem;
-  @media (max-width: 720px) {
-    transform: scale(0.8);
-  }
-}
 .information-container {
   @include flexLayout;
   flex-direction: column;
 }
 
-.information-container__box {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  margin: 1.5rem;
-  border: 3px solid white;
-  border-radius: 10px;
-  padding: 3rem;
-  width: 90%;
-  max-width: 50rem;
-}
-.information-container__box__autoControl {
-  background-color: white;
-}
 h4 {
   font-size: $font-bg;
-}
-.information-container__p {
-  margin-left: 1rem;
-  font-size: 2rem;
-}
-.information-container__box__autoControl {
-  background-color: white;
 }
 </style>
