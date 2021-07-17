@@ -6,15 +6,13 @@ ProcessController checks RAS enviroment using sensors connected to raspberrys GP
 Then it sends data to webApp where user can get information about RAS state,  and also sends request to ProcessController to change that state.
 In the result if request is in the correct format processControll will accept that change.
 
-```
- SETUP
-```
+## SETUP
+
 
 App is set for 2 water pumps and 2 air pumps. Secondary pumps are backups(if primaries for some reason fails)
 
-```
- SENSORS
-```
+## SENSORS
+
 ### Temperature sensor 
 DS18B20 waterproof version, but it can be any other temperature sensor that fits you but it needs to communicate via 1-Wire protocol;
 ![DS18B20 sensor](relative/path/to/img.jpg?raw=true "DS18B20 waterproof sensor")
