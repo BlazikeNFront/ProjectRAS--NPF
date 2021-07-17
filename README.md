@@ -43,9 +43,9 @@ App on raspberry also work as server, so u can communicate with on LAN connectio
 The problem is in most cases, even if uou correctly do port forwarding - internet providers uses architecture that almost makes impossible to connect (internet providers uses router middlewares so in order to connect they also need port forwarding to redirect all request to your router). In that case, for internet communication you need to deploy backEnd + dist folder files with usage of hosting provider.
 
 ```
-FrontEnd - VUE 3 / VUEX / VUE ROUTER
+FrontEnd - VUE 3 / VUEX / VUE-APEX-CHARTS/SOCKET.IO
 ```
 
 ```
-BackEnd - Firebase
+BackEnd - NODE/EXPRESS/MONGODB/SOCKET.IO
 ```
