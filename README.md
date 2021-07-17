@@ -13,12 +13,14 @@ In the result if request is in the correct format processControll will accept th
 App is set for 2 water pumps and 2 air pumps. Secondary pumps are backups(if primaries for some reason fails)
 
 ```
-## SENSORS
+ SENSORS
 ```
-Temperature sensor - DS18B20 waterproof version, but it can be any other temperature sensor that fits you but it needs to communicate via 1-Wire protocol;
+### Temperature sensor 
+DS18B20 waterproof version, but it can be any other temperature sensor that fits you but it needs to communicate via 1-Wire protocol;
 ![DS18B20 sensor](relative/path/to/img.jpg?raw=true "DS18B20 waterproof sensor")
 
-Water level sensor  - i'm using magnetic water level sensor, but any sensor that works on 0,1 communication will work. Note that sensor that rely on ultrasonic waves most likely will need diffrent breadboard setup , but the signal that they send in most cases will be the same as magnetic type sensors(0,1);
+ ###Water level sensor 
+ i'm using magnetic water level sensor, but any sensor that works on 0,1 communication will work. Note that sensor that rely on ultrasonic waves most likely will need diffrent breadboard setup , but the signal that they send in most cases will be the same as magnetic type sensors(0,1);
 
 
 
