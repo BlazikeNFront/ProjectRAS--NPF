@@ -23,9 +23,11 @@ DS18B20 waterproof version, but it can be any other temperature sensor that fits
 
 ### PUMPS CONTROLLER
 Since there are 4 pumps, we need at least 4 channel relay module. Any that allows alternating current   (of course if we are using that type of current) and **are OFF on defualt** will be good. 
+
  ![4 channel relay module](relative/path/to/img.jpg?raw=true "4 channel relay module")
  Inputs are in order like pumps( 1 === water Pump 1 ; 2=== water Pump 2; etc...);
  In ProcessController App every pump is defualt on 0, that type of setup prevents total system failure in case raspberry decide to die. But also that means cabels need diffrent arrangement in module. Which u can see in the above picture.
+ 
  **NOTE**
  In case you are using more powerful pumps, small relay (like in the picture) may not be able to handle currency. You should setup like in the picture below, that uses 4 channel module as middleware, to control others ('stronger') relays (that acutally activates pumps).
  
