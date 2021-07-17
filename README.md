@@ -37,6 +37,10 @@ Since there are 4 pumps, we need at least 4 channel relay module. Any that allow
 
 Above breadboard scheme is only one of many possible configuration.
 
+## Network
+App on raspberry also work as server, so u can communicate with on LAN connection- you just need to know Lan address of connected raspberry Pi.It allows same communication as server app but it uses Websockets (socket.io) which means that commincation via LAN network is almost in real time. You can also connect from web (you need to know your global IP address and do PORT FORWARDING on router.In that case app should be running on reverse proxy (like Nginx) due to security reasons.
+
+The problem is in most cases, even if uou correctly do port forwarding - internet providers uses architecture that almost makes impossible to connect (internet providers uses router middlewares so in order to connect they also need port forwarding to redirect all request to your router). In that case, for internet communication you need to deploy backEnd + dist folder files with usage of hosting provider.
 
 ```
 FrontEnd - VUE 3 / VUEX / VUE ROUTER
