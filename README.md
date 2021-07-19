@@ -4,29 +4,29 @@
 
 ProjectRAS is IoT/WebApp project that  controls Recirculating Aquaculture System (RAS) enviroment and also allows user to do it via network.
 Base of the project is nodeJS app (let's call it ProcessController) that is running on RASPBERRY PI. 
-ProcessController checks RAS enviroment using sensors connected to raspberrys GPIO.
-Then it sends data to webApp where user can get information about RAS state,  and also sends request to ProcessController to change that state.
-In the result if request is in the correct format processControll will accept that change.
+ProcessController check RAS enviroment using sensors connected to raspberrys GPIO.
+Then it send data to webApp where user can get information about RAS state,  and also sends requests to ProcessController to change that state.
+If request is in the correct format processControll will accept that change.
 
 ## SETUP
 
 
-App is set for 2 water pumps and 2 air pumps. Secondary pumps are backups(if primaries for some reason fails)
+App is set for 2 water pumps and 2 air pumps. Secondary pumps are backups(if main pumps for some reason fails)
 
 ## SENSORS AND PUMPS CONTROLLER
 
 ### Temperature sensor 
-DS18B20 waterproof version, but it can be any other temperature sensor that fits you but it needs to communicate via 1-Wire protocol
+DS18B20 waterproof version, but it can be any other temperature sensor that fit you but it need to communicate via 1-Wire protocol
 
 ![DS18B20 sensor](readMeImages/DS18B20.png?raw=true "DS18B20 waterproof sensor")
 
  ### Water level sensor 
- i'm using magnetic water level sensor, but any sensor that works on 0,1 communication will work. Note that sensor that rely on ultrasonic waves most likely will need diffrent breadboard setup , but the signal that they send in most cases will be the same as magnetic type sensors(0,1)
+ I'm using magnetic water level sensor, but any sensor that works on 0,1 communication will work. Note that sensor that rely on ultrasonic waves most likely will need diffrent breadboard setup , but the signal that they send in most cases will be the same as magnetic type sensors(0,1)
  
  ![Magnetic Water Level Sensor](readMeImages/waterLevelSensor.jpg?raw=true "Magnetic Water Level Sensor")
 
 ### PUMPS CONTROLLER
-Since there are 4 pumps, we need at least 4 channel relay module. Any that allows alternating current   (of course if we are using that type of current) and **are OFF on defualt** will be good. 
+Since there are 4 pumps, we need at least 4 channels relay module. Any that allows alternating current   (of course if we are using that type of current) and **are OFF on defualt** will be good. 
 
  ![4 channel relay module](readMeImages/relay.jpg?raw=true "4 channel relay module")
 
@@ -45,9 +45,9 @@ Since there are 4 pumps, we need at least 4 channel relay module. Any that allow
 
 
 ## Network
-App on raspberry also work as server, so u can communicate with on LAN connection- you just need to know Lan address of connected raspberry Pi.It allows same communication as server app but it uses Websockets (socket.io) which means that commincation via LAN network is almost in real time. You can also connect from web (you need to know your global IP address and do PORT FORWARDING on router.In that case app should be running on reverse proxy (like Nginx) due to security reasons.
+App on raspberry also work as server, so u can communicate with it through LAN connection- you just need to know LAN address of connected raspberry Pi.It allows same communication as server app but it uses Websockets (socket.io) without intervals, which means that commincation via LAN network is  in real time. You can also connect from web (you need to know your global IP address and do PORT FORWARDING on router.In that case app should be running on reverse proxy (like Nginx) due to security reasons.
 
-The problem is in most cases, even if you did correctly  port forwarding - internet providers uses architecture that almost makes impossible to connect (internet providers uses router middlewares so in order to connect they also need port forwarding to redirect all request to your router and ip addresses are changing). In that case, for internet communication you need to deploy backEnd + dist folder files with usage of hosting provider. Raspberry app will send information to server and check for requests on every interval .
+The problem is in most cases (even if you did correctly  port forwarding)  internet providers uses architecture that almost make it impossible to connect (internet providers uses router middlewares, so in order to connect they also need port forwarding to redirect all request to your router and second thing is that your global ip address is changing). In that case, for internet communication you need to deploy backEnd + dist folder files with usage of hosting provider. Raspberry app will send information to server and check for requests on every interval .
  
 In direct connection (without Port Forwarding) u need to create JSON file with admin credentials.
 
