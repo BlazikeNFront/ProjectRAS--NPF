@@ -15,16 +15,16 @@ App is set for 2 water pumps and 2 air pumps. Secondary pumps are backups(if pri
 
 ### Temperature sensor 
 DS18B20 waterproof version, but it can be any other temperature sensor that fits you but it needs to communicate via 1-Wire protocol;
-![DS18B20 sensor](relative/path/to/img.jpg?raw=true "DS18B20 waterproof sensor")
+![DS18B20 sensor](readMeImages/DS18B20.png?raw=true "DS18B20 waterproof sensor")
 
  ### Water level sensor 
  i'm using magnetic water level sensor, but any sensor that works on 0,1 communication will work. Note that sensor that rely on ultrasonic waves most likely will need diffrent breadboard setup , but the signal that they send in most cases will be the same as magnetic type sensors(0,1);
- ![Magnetic Water Level Sensor](relative/path/to/img.jpg?raw=true "Magnetic Water Level Sensor")
+ ![Magnetic Water Level Sensor](readMeImages/waterLevelSensor.jpg?raw=true "Magnetic Water Level Sensor")
 
 ### PUMPS CONTROLLER
 Since there are 4 pumps, we need at least 4 channel relay module. Any that allows alternating current   (of course if we are using that type of current) and **are OFF on defualt** will be good. 
 
- ![4 channel relay module](relative/path/to/img.jpg?raw=true "4 channel relay module")
+ ![4 channel relay module](readMeImages/relay.jpg?raw=true "4 channel relay module")
  Inputs are in order like pumps( 1 === water Pump 1 ; 2=== water Pump 2; etc...);
  In ProcessController App every pump is defualt on 0, that type of setup prevents total system failure in case raspberry decide to die. But also that means cabels need diffrent arrangement in module. Which u can see in the above picture.
  
@@ -34,8 +34,9 @@ Since there are 4 pumps, we need at least 4 channel relay module. Any that allow
  
 
 ## GPIO OUTPUT
+![GPIO output](readMeImages/Pi%20Gpio%20setup.png?raw=true "Gpio scheme")
+![GPIO output 2](readMeImages/Pi%20Setup%202.jpg?raw=true "Gpio scheme picture")
 
-Above breadboard scheme is only one of many possible configuration.
 
 ## Network
 App on raspberry also work as server, so u can communicate with on LAN connection- you just need to know Lan address of connected raspberry Pi.It allows same communication as server app but it uses Websockets (socket.io) which means that commincation via LAN network is almost in real time. You can also connect from web (you need to know your global IP address and do PORT FORWARDING on router.In that case app should be running on reverse proxy (like Nginx) due to security reasons.
