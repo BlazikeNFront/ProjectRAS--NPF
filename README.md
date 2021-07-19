@@ -45,9 +45,9 @@ Since there are 4 pumps, we need at least 4 channels relay module. Any that allo
 
 
 ## Network
-App on raspberry also work as server, so u can communicate with it through LAN connection- you just need to know LAN address of connected raspberry Pi.It allows same communication as server app but it uses Websockets (socket.io) without intervals, which means that commincation via LAN network is  in real time. You can also connect from web (you need to know your global IP address and do PORT FORWARDING on router.In that case app should be running on reverse proxy (like Nginx) due to security reasons.
+App on raspberry also work as server, so u can communicate with it through LAN connection - you just need to know LAN address of connected raspberry Pi.It allows same communication as server app, but it uses Websockets (socket.io) without intervals, which means that commincation via LAN network is  in real time. You can also connect from web (you need to know your global IP address and do PORT FORWARDING on router.In that case app should be running on reverse proxy (like Nginx) due to security reasons.
 
-The problem is in most cases (even if you did correctly  port forwarding)  internet providers uses architecture that almost make it impossible to connect (internet providers uses router middlewares, so in order to connect they also need port forwarding to redirect all request to your router and second thing is that your global ip address is changing). In that case, for internet communication you need to deploy backEnd + dist folder files with usage of hosting provider. Raspberry app will send information to server and check for requests on every interval .
+The problem is in most cases (even if you did correctly  port forwarding)  internet providers uses architecture that almost make it impossible to connect (internet providers uses router middlewares, so in order to connect they also need port forwarding to redirect all request to your router and second thing is that your global ip address is changing). In that case, for internet communication you need to deploy backEnd + dist(front-end build) folder files with usage of hosting provider. Raspberry app will send information to server and check for requests on every interval .
  
 In direct connection (without Port Forwarding) u need to create JSON file with admin credentials.
 
