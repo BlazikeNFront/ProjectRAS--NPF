@@ -1,4 +1,6 @@
 # PROJECT RAS
+## APP IS STILL IN DEVELOP !!! - in my case it works good but that doesn't mean it is perfect(bugs may occure) Espacially because of enviromental variables (diffrent hosting provider, diffrent sensors/modules etc.) 
+
 
 ProjectRAS is IoT/WebApp project that  controls Recirculating Aquaculture System (RAS) enviroment and also allows user to do it via network.
 Base of the project is nodeJS app (let's call it ProcessController) that is running on RASPBERRY PI. 
@@ -32,8 +34,9 @@ Since there are 4 pumps, we need at least 4 channel relay module. Any that allow
  In ProcessController App every pump is defualt on 0, that type of setup prevents total system failure in case raspberry decide to die. But also that means cabels need diffrent arrangement in module. Which u can see in the above picture.
  
  **NOTE**
- In case you are using more powerful pumps, small relay (like in the picture) may not be able to handle currency. You should setup like in the picture below, that uses 4 channel module as middleware, to control others ('stronger') relays (that acutally activates pumps).
+ In case you are using more powerful pumps, small relay (like in the picture) may not be able to handle currency. You should create  setup with electrical switchgear like in the picture below, that uses 4 channel module as middleware, to control others ('stronger') relays (that acutally activates pumps).
  
+  ![](readMeImages/Box.jpg?raw=true "electrical switchgear setup")
  
 
 ## GPIO OUTPUT
@@ -44,7 +47,9 @@ Since there are 4 pumps, we need at least 4 channel relay module. Any that allow
 ## Network
 App on raspberry also work as server, so u can communicate with on LAN connection- you just need to know Lan address of connected raspberry Pi.It allows same communication as server app but it uses Websockets (socket.io) which means that commincation via LAN network is almost in real time. You can also connect from web (you need to know your global IP address and do PORT FORWARDING on router.In that case app should be running on reverse proxy (like Nginx) due to security reasons.
 
-The problem is in most cases, even if uou correctly do port forwarding - internet providers uses architecture that almost makes impossible to connect (internet providers uses router middlewares so in order to connect they also need port forwarding to redirect all request to your router). In that case, for internet communication you need to deploy backEnd + dist folder files with usage of hosting provider.
+The problem is in most cases, even if you did correctly  port forwarding - internet providers uses architecture that almost makes impossible to connect (internet providers uses router middlewares so in order to connect they also need port forwarding to redirect all request to your router and ip addresses are changing). In that case, for internet communication you need to deploy backEnd + dist folder files with usage of hosting provider. Raspberry app will send information to server and check for requests on every interval .
+ 
+In direct connection (without Port Forwarding) u need to create JSON file with admin credentials.
 
 ```
 FrontEnd - VUE 3 / VUEX / VUE-APEX-CHARTS/SOCKET.IO
