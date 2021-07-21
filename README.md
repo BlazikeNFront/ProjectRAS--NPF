@@ -1,5 +1,7 @@
 # PROJECT RAS
-## APP IS STILL IN DEVELOP !!! - in my case it works good, but that doesn't mean it is perfect(bugs may occure). Espacially because of enviromental variables (diffrent hosting provider, diffrent sensors/modules etc.) 
+## APP IS STILL IN DEVELOP !!! - in my case it works good, but that doesn't mean it is perfect(bugs may occure). Espacially because of enviromental variables (diffrent hosting provider, diffrent sensors/modules etc.). 
+
+### It should be executed from app like PM2 [Link to PM2 site](https://pm2.keymetrics.io/) - for example it allows autostart app or autorestart on crash
 
 
 ProjectRAS is IoT/WebApp project that  controls Recirculating Aquaculture System (RAS) enviroment and also allows user to do it via network.
