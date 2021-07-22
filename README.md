@@ -19,7 +19,7 @@ App is set for 2 water pumps and 2 air pumps. Secondary pumps are backups(if mai
 
 CritTemp variable is temperature number , above it second air pump (direct tank air pumping) will initialize
 
-Default protocol [normal Level - temperature beneath critTemp variable] - STATE -all pumps controllers on 0 state) initialize primary pumps ( first water pump and  1 air pump). 
+Default protocol -normal water Level - temperature beneath critTemp variable -all pumps controllers on 0 state) initialize primary pumps ( first water pump and  1 air pump). 
 
 Incorrect water level on water pump 1, temperature beneath critTemp - stop first water pump - init second water pump, send SMS message about malfunction;
 
