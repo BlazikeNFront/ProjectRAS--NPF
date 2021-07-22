@@ -15,9 +15,11 @@ If request is in the correct format processControll will accept that change.
 
 ## LOGIC
 
-App is set for 2 water pumps and 2 air pumps. Secondary pumps are backups(if main pumps for some reason fails). First air pumps goes into bioreactor, thr other one should go directly into tank with animals.
+App is set for 2 water pumps and 2 air pumps. Secondary pumps are backups(if main pumps for some reason fails). First air pumps goes into bioreactor, the other one should go directly into tank with animals.
 
-Default protocol [normal Level - temperature beneath critTemp variable] - STATE -all pumps controllers on 0 state) initialize primary pumps ( 1 water and  1 air). 
+CritTemp variable is temperature number , above it second air pump (direct tank air pumping) will initialize
+
+Default protocol [normal Level - temperature beneath critTemp variable] - STATE -all pumps controllers on 0 state) initialize primary pumps ( first water pump and  1 air pump). 
 
 Incorrect water level on water pump 1, temperature beneath critTemp - stop first water pump - init second water pump, send SMS message about malfunction;
 
