@@ -26,7 +26,7 @@ Incorrect water level on water pump 2, temperature beneath critTemp - stop both 
 Normal water level on any pump, temperature over critTemp - initialize second air pump,send SMS message about incorrect temperature;
 
 This autocontrol will work as long as 'autoControl' variable (in process controller ) is true.
-**Every remote action through Server or LAN connection sets autoControl to false**, but in can also be turn ON again remotly.
+**Every remote action through Server or LAN connection sets autoControl to false**, but in can also be remotly turn ON again .
 
 
 
