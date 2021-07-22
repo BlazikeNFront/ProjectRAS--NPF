@@ -7,10 +7,10 @@
 ### It should be executed from app like  [ PM2 ](https://pm2.keymetrics.io/) -  (autostarts app on system start, or autorestart on crash)
 
 
-ProjectRAS is IoT/WebApp project that  controls Recirculating Aquaculture System (RAS) enviroment, sends warning via phone network (3rd party API) and also allows user to do it via network. 
+ProjectRAS is IoT/WebApp project that  controls Recirculating Aquaculture System (RAS) enviroment, sends warning via phone network (3rd party API) and also allow user to remote control it via network. 
 Base of the project is nodeJS app (let's call it ProcessController) that is running on RASPBERRY PI. 
 ProcessController check RAS enviroment using sensors connected to raspberrys GPIO.
-Then it send data to webApp where user can get information about RAS state,  and also sends requests to ProcessController to change that state.
+Then  sends data to webApp where user can get information about RAS state,  and also sends requests to ProcessController to change that state.
 If request is in the correct format processControll will accept that change.
 
 ## LOGIC
