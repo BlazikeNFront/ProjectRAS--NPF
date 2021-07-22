@@ -7,16 +7,30 @@
 ### It should be executed from app like  [ PM2 ](https://pm2.keymetrics.io/) -  (autostarts app on system start, or autorestart on crash)
 
 
-ProjectRAS is IoT/WebApp project that  controls Recirculating Aquaculture System (RAS) enviroment and also allows user to do it via network.
+ProjectRAS is IoT/WebApp project that  controls Recirculating Aquaculture System (RAS) enviroment, sends warning via phone network (3rd party API) and also allows user to do it via network. 
 Base of the project is nodeJS app (let's call it ProcessController) that is running on RASPBERRY PI. 
 ProcessController check RAS enviroment using sensors connected to raspberrys GPIO.
 Then it send data to webApp where user can get information about RAS state,  and also sends requests to ProcessController to change that state.
 If request is in the correct format processControll will accept that change.
 
-## SETUP
+## LOGIC
+
+App is set for 2 water pumps and 2 air pumps. Secondary pumps are backups(if main pumps for some reason fails). First air pumps goes into bioreactor, thr other one should go directly into tank with animals.
+
+Default protocol [normal Level - temperature beneath critTemp variable] - STATE -all pumps controllers on 0 state) initialize primary pumps ( 1 water and  1 air). 
+Incorrect water level on water pump 1, temperature beneath critTemp - stop first water pump - init second water pump, send SMS message about malfunction;
+Incorrect water level on water pump 2, temperature beneath critTemp - stop both pumps , initialize second air pumps,send SMS message about malfunction;
+Normal water level on any pump, temperature over critTemp - initialize second air pumps,send SMS message about incorrect temperature;
+
+This autocontrol will work as long as 'autoControl' variable (in process controller ) is true.
+**Every remote action through Server or LAN connection sets autoControl to false**, but in can also be turn ON again remotly.
 
 
-App is set for 2 water pumps and 2 air pumps. Secondary pumps are backups(if main pumps for some reason fails)
+
+
+
+
+
 
 ## SENSORS AND PUMPS CONTROLLER
 
