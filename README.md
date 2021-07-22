@@ -50,7 +50,7 @@ DS18B20 waterproof version, but it can be any other temperature sensor that fit 
  ![Magnetic Water Level Sensor](readMeImages/waterLevelSensor.jpg?raw=true "Magnetic Water Level Sensor")
 
 ### PUMPS CONTROLLER
-Since there are 4 pumps, we need at least 4 channels relay module. Any that allows alternating current   (of course if we are using that type of current) and **are OFF on defualt** will be good. 
+Since there are 4 pumps, we need at least 4 channels relay module. Any that allows alternating current   (of course if we are using that type of current) and **are OFF on defualt** will be suitable. 
 
  ![4 channel relay module](readMeImages/relay.jpg?raw=true "4 channel relay module")
 
