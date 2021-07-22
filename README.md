@@ -21,9 +21,9 @@ Default protocol [normal Level - temperature beneath critTemp variable] - STATE 
 
 Incorrect water level on water pump 1, temperature beneath critTemp - stop first water pump - init second water pump, send SMS message about malfunction;
 
-Incorrect water level on water pump 2, temperature beneath critTemp - stop both pumps , initialize second air pumps,send SMS message about malfunction;
+Incorrect water level on water pump 2, temperature beneath critTemp - stop both pumps , initialize second air pump,send SMS message about malfunction;
 
-Normal water level on any pump, temperature over critTemp - initialize second air pumps,send SMS message about incorrect temperature;
+Normal water level on any pump, temperature over critTemp - initialize second air pump,send SMS message about incorrect temperature;
 
 This autocontrol will work as long as 'autoControl' variable (in process controller ) is true.
 **Every remote action through Server or LAN connection sets autoControl to false**, but in can also be turn ON again remotly.
