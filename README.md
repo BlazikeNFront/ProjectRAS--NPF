@@ -18,8 +18,11 @@ If request is in the correct format processControll will accept that change.
 App is set for 2 water pumps and 2 air pumps. Secondary pumps are backups(if main pumps for some reason fails). First air pumps goes into bioreactor, thr other one should go directly into tank with animals.
 
 Default protocol [normal Level - temperature beneath critTemp variable] - STATE -all pumps controllers on 0 state) initialize primary pumps ( 1 water and  1 air). 
+
 Incorrect water level on water pump 1, temperature beneath critTemp - stop first water pump - init second water pump, send SMS message about malfunction;
+
 Incorrect water level on water pump 2, temperature beneath critTemp - stop both pumps , initialize second air pumps,send SMS message about malfunction;
+
 Normal water level on any pump, temperature over critTemp - initialize second air pumps,send SMS message about incorrect temperature;
 
 This autocontrol will work as long as 'autoControl' variable (in process controller ) is true.
