@@ -55,7 +55,7 @@ Since there are 4 pumps, we need at least 4 channels relay module. Any that allo
  ![4 channel relay module](readMeImages/relay.jpg?raw=true "4 channel relay module")
 
  Inputs are in order like pumps( 1 === water Pump 1 ; 2=== water Pump 2; etc...);
- In ProcessController App every pump is defualt on 0, that type of setup prevents total system failure in case raspberry decide to die. But also that means cabels need diffrent arrangement in module. Which u can see in the above picture.
+ In ProcessController App every pump is defualt on 0, that type of setup prevents total system failure in case raspberry decide to die. But also that means wires need diffrent arrangement in module. Which u can see in the above picture.
  
  **NOTE**
  In case you are using more powerful pumps, small relay (like in the picture) may not be able to handle currency. You should create  setup with electrical switchgear like in the picture below, that uses 4 channel module as middleware, to control others ('stronger') relays (that acutally activates pumps).
